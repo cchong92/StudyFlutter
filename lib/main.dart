@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:mywan/study.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyFirstApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -37,11 +38,40 @@ class MyGoTo extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("66666666"),),
       body:Center(
-          child: Text("dadasdasdasdasdasdasdas")
-      ),
+        child: Image.asset("images/ic_launcher_round.png"),
 
+//
+//          child: Text("dadasdasdasdasdasdasdas"),
+
+
+      ),
+      
     );
   }
+
+}
+class MyGoTo1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Image.asset("images/ic_launcher_round.png");
+
+  }
+
+}
+
+
+class RandomWordsWidget extends StatelessWidget{
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    final   str=new WordPair.random();
+    return Padding(
+        padding: const EdgeInsets.all(10.0),
+    child: new Text(str.toLowerCase().toString()));
+  }
+
 
 }
 
@@ -65,7 +95,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -85,6 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    final   str=new WordPair.random();
     return Scaffold(
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
@@ -110,6 +140,8 @@ class _MyHomePageState extends State<MyHomePage> {
             // center the children vertically; the main axis here is the vertical
             // axis because Columns are vertical (the cross axis would be
             // horizontal).
+
+
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
@@ -123,12 +155,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, "aaa");
 //                Navigator.push(
 //                    context, new MaterialPageRoute(builder: (context) {
-//                  return new MyGoTo();
+//                  return new MyGoTo1();
 //                }));
               },
-                  child: Text("打开新页面966933"))
+                  child: Text("打开新页面966933")),
+
+               Text(
+
+                   "$str"
+               ),
+
+
+
             ],
+
+
           ),
+
+
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: _incrementCounter,
